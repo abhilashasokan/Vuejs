@@ -1,0 +1,22 @@
+{
+  "name": "myApp",
+  "description": "",
+  "main": "index.html",
+  "authors": [
+    "Abhilash <abhilashasokan@icloud.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "1",
+    "tether": "^1.4.3"
+  }
+}

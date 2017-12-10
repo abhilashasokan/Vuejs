@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" src="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" src="assets/css/style.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    show: true,
+                    persons: [
+                        { name: 'Max', age: 27 },
+                        { name: 'Chris', age: 36 },
+                        { name: 'Walcott', age: 23 },
+                    ]
+                },
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-inverse p-4">
+                <h4 class="text-white">Collapsed content</h4>
+                <span class="text-muted">Toggleable via the navbar brand.</span>
+            </div>
+        </div>
+        <nav class="navbar navbar-inverse bg-inverse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </nav>
+    </div>
+    <div class="card">
+        <div class="card-block">
+            <div id="app" class="container">
+                <button v-on:click="show = !show" type="button" class="btn btn-primary btn-sm">Show / Hide</button>
+                <p v-if="show">I am parttime visible</p>
+                <p v-else>I am visible</p>
+                <p v-show="show">I am here</p>
+                <ul>
+                    <li v-for="(person, index) in persons">
+                            [{{ index }}]. {{ person.name }}
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VueJS</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" src="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" src="assets/css/style.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function () {
+            new Vue({
+                el: '#app',
+                data: {
+                    clicks: 0
+                },
+                methods:{
+                    func_increment(){
+                        this.clicks ++;
+                    }
+                },
+                computed: {
+                    counter() {
+                        return this.clicks * 2;
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="func_increment">Increment Count</button>
+        <p>counter is :{{ counter }}</p>
+        <p>clicks are :{{ clicks }}</p>
+    </div>
+</body>
+
+</html>
